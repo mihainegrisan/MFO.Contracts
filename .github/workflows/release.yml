@@ -31,7 +31,7 @@ jobs:
       - name: Get version from csproj
         id: get_version
         run: |
-          VERSION=$(sed -n 's:.*<Version>\(.*\)</Version>.*:\1:p' MFO.Contracts/MFO.Contracts.csproj)
+          VERSION=$(sed -n 's:.*<Version>\(.*\)</Version>.*:\1:p' MFO.Contracts.csproj)
           echo "version=$VERSION" >> $GITHUB_OUTPUT
 
       - name: Bump patch version
