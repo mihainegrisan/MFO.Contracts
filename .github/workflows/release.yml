@@ -11,7 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Needed to push commits/tags
+          fetch-depth: 0  # Needed to push commits and tags
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
@@ -48,7 +48,9 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add **/*.csproj
           git commit -m "chore: bump version to ${{ steps.bump.outputs.new_version }}"
+          git tag v${{ steps.bump.outputs.new_version }}
           git push
+          git push origin v${{ steps.bump.outputs.new_version }}
 
       - name: Pack
         run: dotnet pack --configuration Release -p:PackageVersion=${{ steps.bump.outputs.new_version }} -o ./artifacts
