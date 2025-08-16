@@ -4,6 +4,18 @@
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+
+    <PackageId>MFO.Contracts</PackageId>
+    <Version>1.0.1</Version>
+    <Authors>Mihai Negrisan</Authors>
+    <Company>MFrontier Outpost</Company>
+    <Description>Shared DTOs and event contracts for MFO microservices.</Description>
+    <RepositoryUrl>https://github.com/mihainegrisan/MFO.Contracts</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Catalog\" />
+  </ItemGroup>
 
 </Project>
