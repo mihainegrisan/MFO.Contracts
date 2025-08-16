@@ -28,6 +28,17 @@ jobs:
       - name: Test
         run: dotnet test --configuration Release --no-build --verbosity normal
 
+      - name: Ensure MFO.Contracts.csproj and <Version> exist
+        run: |
+          if [ ! -f MFO.Contracts.csproj ]; then
+            echo "MFO.Contracts.csproj not found!"
+            exit 1
+          fi
+          if ! grep -q "<Version>" MFO.Contracts.csproj; then
+            echo "<Version> element not found in MFO.Contracts.csproj!"
+            exit 1
+          fi
+
       - name: Get version from csproj
         id: get_version
         run: |
