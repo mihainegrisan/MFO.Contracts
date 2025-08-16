@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Needed to push commits/tags
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
@@ -39,11 +41,23 @@ jobs:
           new_version="$major.$minor.$patch"
           echo "new_version=$new_version" >> $GITHUB_OUTPUT
 
+      - name: Update csproj with new version
+        run: |
+          sed -i "s/<Version>.*<\/Version>/<Version>${{ steps.bump.outputs.new_version }}<\/Version>/" **/*.csproj
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add **/*.csproj
+          git commit -m "chore: bump version to ${{ steps.bump.outputs.new_version }}"
+          git push
+
       - name: Pack
         run: dotnet pack --configuration Release -p:PackageVersion=${{ steps.bump.outputs.new_version }} -o ./artifacts
 
-      - name: Publish to NuGet
-        run: dotnet nuget push ./artifacts/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+      - name: Push to GitHub Packages
+        run: dotnet nuget push ./artifacts/*.nupkg \
+          --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" \
+          --api-key ${{ secrets.GITHUB_TOKEN }} \
+          --skip-duplicate
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
@@ -51,3 +65,5 @@ jobs:
           tag_name: v${{ steps.bump.outputs.new_version }}
           name: Release ${{ steps.bump.outputs.new_version }}
           files: ./artifacts/*.nupkg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
