@@ -15,7 +15,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Catalog\" />
+    <Folder Include="Catalog\DTOs\" />
+    <Folder Include="Catalog\RequestsResponses\" />
   </ItemGroup>
 
 </Project>
