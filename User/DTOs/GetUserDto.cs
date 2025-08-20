@@ -1,4 +1,4 @@
-﻿namespace MFO.Contracts.User;
+﻿namespace MFO.Contracts.User.DTOs;
 
 public record GetUserDto
 {
