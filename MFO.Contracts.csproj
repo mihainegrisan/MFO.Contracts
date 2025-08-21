@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <Folder Include="Catalog\DTOs\" />
+    <Folder Include="Catalog\Events\" />
     <Folder Include="Catalog\RequestsResponses\" />
   </ItemGroup>
 
