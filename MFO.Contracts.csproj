@@ -15,6 +15,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Shared\Enums\**" />
+    <EmbeddedResource Remove="Shared\Enums\**" />
+    <None Remove="Shared\Enums\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Catalog\DTOs\" />
     <Folder Include="Catalog\Events\" />
     <Folder Include="Catalog\RequestsResponses\" />
