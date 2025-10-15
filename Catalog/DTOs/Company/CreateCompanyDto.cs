@@ -1,4 +1,4 @@
-﻿namespace MFO.CatalogService.Application.DTOs.Company;
+﻿namespace MFO.Contracts.Catalog.DTOs.Company;
 
 public class CreateCompanyDto
 {

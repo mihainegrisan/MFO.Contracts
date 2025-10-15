@@ -1,8 +1,8 @@
-﻿using MFO.CatalogService.Application.DTOs.Brand;
-using MFO.CatalogService.Application.DTOs.Category;
-using MFO.CatalogService.Application.DTOs.Company;
+﻿using MFO.Contracts.Catalog.DTOs.Brand;
+using MFO.Contracts.Catalog.DTOs.Category;
+using MFO.Contracts.Catalog.DTOs.Company;
 
-namespace MFO.CatalogService.Application.DTOs.Product;
+namespace MFO.Contracts.Catalog.DTOs.Product;
 
 public sealed record GetProductDto
 {
