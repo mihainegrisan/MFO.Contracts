@@ -1,4 +1,4 @@
-﻿namespace MFO.CatalogService.Application.DTOs.Category;
+﻿namespace MFO.Contracts.Catalog.DTOs.Category;
 
 public sealed record UpdateCategoryDto
 {

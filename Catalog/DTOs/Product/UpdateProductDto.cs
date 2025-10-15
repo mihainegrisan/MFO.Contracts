@@ -1,4 +1,4 @@
-﻿namespace MFO.CatalogService.Application.DTOs.Product;
+﻿namespace MFO.Contracts.Catalog.DTOs.Product;
 
 public sealed record UpdateProductDto
 {

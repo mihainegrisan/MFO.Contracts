@@ -1,4 +1,4 @@
-﻿namespace MFO.CatalogService.Application.DTOs.Brand;
+﻿namespace MFO.Contracts.Catalog.DTOs.Brand;
 
 public sealed record CreateBrandDto
 {
