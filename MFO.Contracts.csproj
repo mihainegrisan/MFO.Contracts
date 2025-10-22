@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
 
     <PackageId>MFO.Contracts</PackageId>
-    <Version>1.0.10</Version>
+    <Version>1.0.11</Version>
     <Authors>Mihai Negrisan</Authors>
     <Company>MFrontier Outpost</Company>
     <Description>Shared DTOs and event contracts for MFO microservices.</Description>
