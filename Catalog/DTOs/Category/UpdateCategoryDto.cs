@@ -2,9 +2,9 @@
 
 public sealed record UpdateCategoryDto
 {
-    public required Guid CategoryId { get; set; }
+    public required Guid CategoryId { get; init; }
 
-    public required string Name { get; set; }
+    public string? Name { get; init; }
 
-    public required string Code { get; set; }
+    public string? Code { get; init; }
 }

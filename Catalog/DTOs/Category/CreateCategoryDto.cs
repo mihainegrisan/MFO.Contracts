@@ -2,7 +2,7 @@
 
 public sealed record CreateCategoryDto
 {
-    public required string Name { get; set; }
+    public required string Name { get; init; }
 
-    public required string Code { get; set; }
+    public required string Code { get; init; }
 }

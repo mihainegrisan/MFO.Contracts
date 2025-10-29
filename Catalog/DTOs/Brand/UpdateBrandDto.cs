@@ -2,11 +2,11 @@
 
 public sealed record UpdateBrandDto
 {
-    public Guid BrandId { get; set; }
+    public required Guid BrandId { get; init; }
 
-    public required string Name { get; set; }
+    public string? Name { get; init; }
 
-    public required string Code { get; set; }
+    public string? Code { get; init; }
 
-    public string? Description { get; set; }
+    public string? Description { get; init; }
 }

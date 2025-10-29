@@ -1,12 +1,12 @@
 ﻿namespace MFO.Contracts.Catalog.DTOs.Company;
 
-public class UpdateCompanyDto
+public sealed record UpdateCompanyDto
 {
-    public required Guid CompanyId { get; set; }
+    public required Guid CompanyId { get; init; }
 
-    public required string Name { get; set; }
+    public string? Name { get; init; }
 
-    public required string Code { get; set; }
+    public string? Code { get; init; }
 
-    public string? Description { get; set; }
+    public string? Description { get; init; }
 }
