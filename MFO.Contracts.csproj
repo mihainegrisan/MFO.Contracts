@@ -32,9 +32,4 @@
     <None Remove="README.md" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Catalog\DTOs\" />
-    <Folder Include="Catalog\" />
-  </ItemGroup>
-
 </Project>
