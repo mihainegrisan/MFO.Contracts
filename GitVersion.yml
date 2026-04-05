@@ -1,0 +1,6 @@
+workflow: TrunkBased/preview1
+branches:
+  pull-request:
+    increment: Patch
+  feature:
+    increment: Patch

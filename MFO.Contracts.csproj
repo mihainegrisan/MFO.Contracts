@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
@@ -13,23 +13,5 @@
     <RepositoryUrl>https://github.com/mihainegrisan/MFO.Contracts</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="Catalog\Events\**" />
-    <Compile Remove="Catalog\RequestsResponses\**" />
-    <Compile Remove="Shared\Enums\**" />
-    <EmbeddedResource Remove="Catalog\Events\**" />
-    <EmbeddedResource Remove="Catalog\RequestsResponses\**" />
-    <EmbeddedResource Remove="Shared\Enums\**" />
-    <None Remove="Catalog\Events\**" />
-    <None Remove="Catalog\RequestsResponses\**" />
-    <None Remove="Shared\Enums\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove=".gitattributes" />
-    <None Remove=".gitignore" />
-    <None Remove="README.md" />
-  </ItemGroup>
 
 </Project>
