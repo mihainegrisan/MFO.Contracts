@@ -1,4 +1,7 @@
 workflow: TrunkBased/preview1
+next-version: 1.0.19
+commit-message-incrementing: MergeMessageOnly
+
 branches:
   pull-request:
     increment: Patch
