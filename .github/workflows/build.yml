@@ -5,7 +5,7 @@ name: Build
 
 on:
   push:
-    branches-ignore: [ "main" ] # ignore because release.yml is building the master branch
+    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
